@@ -24,7 +24,7 @@ const TextInputGroup = ({
         />
         <label htmlFor={name}>{label}</label>
         {error && (
-          <span className="helper-text" className="red-text" data-error={error}>
+          <span className="helper-text red-text" data-error={error}>
             {error}
           </span>
         )}

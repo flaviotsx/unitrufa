@@ -10,8 +10,9 @@ class Homepage extends Component {
             <div className="card-image">
               <img
                 // src="https://materializecss.com/images/sample-1.jpg"
-                src="http://www.portside.com.br/wp-content/uploads/2012/03/Contato-Portside.png"
+                src="http://validadedetudo.com/wp-content/uploads/2017/08/VALIDADE-DE-TRUFAS-DE-CHOCOLATE-2.jpg"
                 className="brown"
+                style={{ height: '70vh' }}
                 alt="lugar1"
               />
               <span className="card-title amber-text">

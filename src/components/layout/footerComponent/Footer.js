@@ -30,6 +30,7 @@ const Footer = props => {
                 </a>
               </li>
               <li>
+                <i className="material-icons">home</i>
                 <a className="grey-text text-lighten-3" href="#!">
                   Link 4
                 </a>
