@@ -1,0 +1,16 @@
+[
+  {
+    "head": {
+      "title": "Unitrufa"
+    },
+    "header": {
+      "brand": "Unitrufa",
+      "btnhome": "Home",
+      "btnadd": "Add New"
+    },
+    "home": {
+      "title": "Unitrufa",
+      "subtitle": "Aqui você tem sabor!"
+    }
+  }
+]
