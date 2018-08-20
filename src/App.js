@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Components
 import Header from './components/layout/headerComponent/Header';
 import Footer from './components/layout/footerComponent/Footer';
 
+// Components Contacts
+import AddContact from './components/contactComponent/AddContact';
+import Contacts from './components/contactComponent/Contacts';
+
 // Components Pages
 import HomePage from './components/pages/HomePage';
-import ContactsPage from './components/pages/ContactsPage';
-import NewContactPage from './components/pages/NewContactPage';
+import NotFoundPage from './components/pages/NotFoundPage';
 
 // Includes
 import 'materialize-css/dist/css/materialize.min.css';
@@ -22,11 +25,20 @@ class App extends Component {
     return (
       <Router>
         <Provider>
-          <div>
+          <div
+            style={{
+              display: 'flex',
+              minHeight: '100vh',
+              flexDirection: 'column'
+            }}
+          >
             <Header />
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/contacts" component={ContactsPage} />
-            <Route exact path="/contact/add" component={NewContactPage} />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/contacts" component={Contacts} />
+              <Route exact path="/contact/add" component={AddContact} />
+              <Route component={NotFoundPage} />
+            </Switch>
             <Footer />
           </div>
         </Provider>

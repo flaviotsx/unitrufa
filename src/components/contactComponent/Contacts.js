@@ -14,13 +14,15 @@ class Contacts extends Component {
           const { contacts } = value;
           return (
             <React.Fragment>
-              <h1 className="brown-text">
-                <span className="amber-text">Contact</span>
-                List
-              </h1>
-              {contacts.map(contact => (
-                <Contact key={contact.id} contact={contact} />
-              ))}
+              <div className="container row">
+                <h1 className="brown-text">
+                  <span className="amber-text">Contact</span>
+                  List
+                </h1>
+                {contacts.map(contact => (
+                  <Contact key={contact.id} contact={contact} />
+                ))}
+              </div>
             </React.Fragment>
           );
         }}

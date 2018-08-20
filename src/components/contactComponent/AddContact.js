@@ -52,6 +52,8 @@ class AddContact extends Component {
       phone: '',
       errors: {}
     });
+
+    this.props.history.push('/contacts');
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -64,50 +66,52 @@ class AddContact extends Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div className="card large">
-              <div className="card-content">
-                <div className="card-title">Add Contact</div>
-                <form
-                  className="col s12 m12 l12"
-                  onSubmit={this.onSubmit.bind(this, dispatch)}
-                >
-                  <TextInputGroup
-                    icon="account_circle"
-                    id="name"
-                    label="Name"
-                    name="name"
-                    value={name}
-                    onChange={this.onChange}
-                    error={errors.name}
-                  />
-                  <TextInputGroup
-                    icon="email"
-                    id="email"
-                    label="Email"
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={this.onChange}
-                    error={errors.email}
-                  />
-                  <TextInputGroup
-                    icon="phone"
-                    id="phone"
-                    label="Phone"
-                    name="phone"
-                    value={phone}
-                    onChange={this.onChange}
-                    error={errors.phone}
-                  />
-                  <br />
-                  <div className="row">
-                    <input
-                      type="submit"
-                      className="btn btn-large brown col s12 m12 l12"
-                      value="ADD CONTACT"
+            <div className="container row">
+              <div className="card large">
+                <div className="card-content">
+                  <div className="card-title">Add Contact</div>
+                  <form
+                    className="col s12 m12 l12"
+                    onSubmit={this.onSubmit.bind(this, dispatch)}
+                  >
+                    <TextInputGroup
+                      icon="account_circle"
+                      id="name"
+                      label="Name"
+                      name="name"
+                      value={name}
+                      onChange={this.onChange}
+                      error={errors.name}
                     />
-                  </div>
-                </form>
+                    <TextInputGroup
+                      icon="email"
+                      id="email"
+                      label="Email"
+                      name="email"
+                      type="email"
+                      value={email}
+                      onChange={this.onChange}
+                      error={errors.email}
+                    />
+                    <TextInputGroup
+                      icon="phone"
+                      id="phone"
+                      label="Phone"
+                      name="phone"
+                      value={phone}
+                      onChange={this.onChange}
+                      error={errors.phone}
+                    />
+                    <br />
+                    <div className="row">
+                      <input
+                        type="submit"
+                        className="btn btn-large brown col s12 m12 l12"
+                        value="ADD CONTACT"
+                      />
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           );

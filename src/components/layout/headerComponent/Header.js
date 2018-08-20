@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = props => {
   return (
@@ -7,7 +7,7 @@ const Header = props => {
       <nav className="z-depth-5">
         <div className="nav-wrapper amber">
           <div className="container">
-            <Link to="/" className="brand-logo small">
+            <NavLink exact to="/" className="brand-logo small">
               {/* <img
                 className="responsive-img"
                 style={{ height: '40px', position: 'relative', top: '7px' }}
@@ -21,22 +21,22 @@ const Header = props => {
                 lens
               </i>
               Unitrufa
-            </Link>
+            </NavLink>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <Link to="/">
+                <NavLink exact to="/">
                   <i className="material-icons">home</i>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/contacts">
+                <NavLink exact to="/contacts">
                   <i className="material-icons">contacts</i>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/contact/add">
+                <NavLink exact to="/contact/add">
                   <i className="material-icons">add</i>
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
