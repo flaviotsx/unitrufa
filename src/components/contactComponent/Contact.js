@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // context
 import { Consumer } from '../../context';
@@ -10,8 +12,15 @@ class Contact extends Component {
     changeArrowIcon: true
   };
 
-  onDeleteClick = (id, dispatch) => {
-    dispatch({ type: 'DELETE_CONTACT', payload: id });
+  onDeleteClick = async (id, dispatch) => {
+    try {
+      const res = await axios.delete(
+        `https://jsonplaceholder.typicode.com/users/${id}`
+      );
+      dispatch({ type: 'DELETE_CONTACT', payload: id });
+    } catch (e) {
+      dispatch({ type: 'DELETE_CONTACT', payload: id });
+    }
   };
 
   render() {
@@ -46,15 +55,28 @@ class Contact extends Component {
                       <i className="material-icons">arrow_drop_up</i>
                     )}
                     <i
-                      className="material-icons"
-                      style={{ float: 'right' }}
+                      className="material-icons red-text"
+                      style={{
+                        float: 'right',
+                        cursor: 'pointer'
+                      }}
                       onClick={this.onDeleteClick.bind(this, id, dispatch)}
                     >
                       clear
                     </i>
-                    <i className="material-icons" style={{ float: 'right' }}>
-                      edit
-                    </i>
+
+                    <Link to={`/contact/edit/${id}`}>
+                      <i
+                        className="material-icons brown-text"
+                        style={{
+                          float: 'right',
+                          cursor: 'pointer',
+                          marginRight: '1rem'
+                        }}
+                      >
+                        edit
+                      </i>
+                    </Link>
                   </h5>
                   {showContactInfo ? (
                     <ul className="collection">

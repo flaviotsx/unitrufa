@@ -8,6 +8,7 @@ import Footer from './components/layout/footerComponent/Footer';
 // Components Contacts
 import AddContact from './components/contactComponent/AddContact';
 import Contacts from './components/contactComponent/Contacts';
+import EditContact from './components/contactComponent/EditContact';
 
 // Components Pages
 import HomePage from './components/pages/HomePage';
@@ -37,6 +38,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/contacts" component={Contacts} />
               <Route exact path="/contact/add" component={AddContact} />
+              <Route exact path="/contact/edit/:id" component={EditContact} />
               <Route component={NotFoundPage} />
             </Switch>
             <Footer />
