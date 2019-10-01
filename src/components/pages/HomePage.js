@@ -10,7 +10,7 @@ class Homepage extends Component {
             <div className="card-image">
               <img
                 // src="https://materializecss.com/images/sample-1.jpg"
-                src="http://validadedetudo.com/wp-content/uploads/2017/08/VALIDADE-DE-TRUFAS-DE-CHOCOLATE-2.jpg"
+                src="https://www.dropbox.com/s/ddxzuz8clr1z4zj/2448039.jpg?dl=0"
                 className="brown"
                 style={{ height: '70vh' }}
                 alt="lugar1"
